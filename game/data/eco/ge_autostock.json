@@ -1,0 +1,219 @@
+{
+  "offers": [
+    {
+      "_comment": "RUNE_AXE_1359",
+      "item_id": 1359,
+      "amount": 10
+    },
+    {
+      "_comment": "ADAMANT_PICKAXE_1271",
+      "item_id": 1271,
+      "amount": 10
+    },
+    {
+      "_comment": "ADAMANT_AXE_1357",
+      "item_id": 1357,
+      "amount": 10
+    },
+    {
+      "_comment": "RUNE_SCIMITAR_1333",
+      "item_id": 1333,
+      "amount": 10
+    },
+    {
+      "_comment": "COAL_453",
+      "item_id": 453,
+      "amount": 200
+    },
+    {
+      "_comment": "IRON_ORE_440",
+      "item_id": 440,
+      "amount": 150
+    },
+    {
+      "_comment": "GOLD_ORE_444",
+      "item_id": 444,
+      "amount": 100
+    },
+    {
+      "_comment": "MITHRIL_ORE_447",
+      "item_id": 447,
+      "amount": 75
+    },
+    {
+      "_comment": "ADAMANTITE_ORE_449",
+      "item_id": 449,
+      "amount": 50
+    },
+    {
+      "_comment": "RUNITE_ORE_451",
+      "item_id": 451,
+      "amount": 25
+    },
+    {
+      "_comment": "COPPER_ORE_436",
+      "item_id": 436,
+      "amount": 100
+    },
+    {
+      "_comment": "TIN_ORE_438",
+      "item_id": 438,
+      "amount": 100
+    },
+    {
+      "_comment": "GRIMY_GUAM_199",
+      "item_id": 199,
+      "amount": 100
+    },
+    {
+      "_comment": "GRIMY_MARRENTILL_201",
+      "item_id": 201,
+      "amount": 100
+    },
+    {
+      "_comment": "GRIMY_TARROMIN_203",
+      "item_id": 203,
+      "amount": 100
+    },
+    {
+      "_comment": "GRIMY_HARRALANDER_205",
+      "item_id": 205,
+      "amount": 100
+    },
+    {
+      "_comment": "GRIMY_RANARR_207",
+      "item_id": 207,
+      "amount": 10
+    },
+    {
+      "_comment": "VIAL_OF_WATER_227",
+      "item_id": 227,
+      "amount": 100
+    },
+    {
+      "_comment": "VIAL_229",
+      "item_id": 229,
+      "amount": 100
+    },
+    {
+      "_comment": "JUG_OF_WATER_1937",
+      "item_id": 1937,
+      "amount": 100
+    },
+    {
+      "_comment": "LOBSTER_379",
+      "item_id": 379,
+      "amount": 100
+    },
+    {
+      "_comment": "ANTIFIRE_POTION4_2452",
+      "item_id": 2452,
+      "amount": 100
+    },
+    {
+      "_comment": "ASHES_592",
+      "item_id": 592,
+      "amount": 100
+    },
+    {
+      "_comment": "MORT_MYRE_FUNGUS_2970",
+      "item_id": 2970,
+      "amount": 100
+    },
+    {
+      "_comment": "POISON_IVY_BERRIES_6018",
+      "item_id": 6018,
+      "amount": 100
+    },
+    {
+      "_comment": "POTATO_CACTUS_3138",
+      "item_id": 3138,
+      "amount": 100
+    },
+    {
+      "_comment": "EYE_OF_NEWT_221",
+      "item_id": 221,
+      "amount": 100
+    },
+    {
+      "_comment": "RED_SPIDERS_EGGS_223",
+      "item_id": 223,
+      "amount": 100
+    },
+    {
+      "_comment": "CRUSHED_NEST_6693",
+      "item_id": 6693,
+      "amount": 50
+    },
+    {
+      "_comment": "CHOCOLATE_DUST_1975",
+      "item_id": 1975,
+      "amount": 25
+    },
+    {
+      "_comment": "LIMPWURT_ROOT_225",
+      "item_id": 225,
+      "amount": 50
+    },
+    {
+      "_comment": "OAK_LOGS_1521",
+      "item_id": 1521,
+      "amount": 100
+    },
+    {
+      "_comment": "WILLOW_LOGS_1519",
+      "item_id": 1519,
+      "amount": 100
+    },
+    {
+      "_comment": "MAPLE_LOGS_1517",
+      "item_id": 1517,
+      "amount": 100
+    },
+    {
+      "_comment": "RAW_SHRIMPS_317",
+      "item_id": 317,
+      "amount": 100
+    },
+    {
+      "_comment": "RAW_ANCHOVIES_321",
+      "item_id": 321,
+      "amount": 100
+    },
+    {
+      "_comment": "COWHIDE_1739",
+      "item_id": 1739,
+      "amount": 100
+    },
+    {
+      "_comment": "FISHING_BAIT_313",
+      "item_id": 313,
+      "amount": 1000
+    },
+    {
+      "_comment": "FEATHER_314",
+      "item_id": 314,
+      "amount": 1000
+    },
+    {
+      "_comment": "AIR_RUNE_556",
+      "item_id": 556,
+      "amount": 10000
+    },
+    {
+      "_comment": "WATER_RUNE_555",
+      "item_id": 555,
+      "amount": 10000
+    },
+    {
+      "_comment": "EARTH_RUNE_557",
+      "item_id": 557,
+      "amount": 5000
+    },
+    {
+      "_comment": "FIRE_RUNE_554",
+      "item_id": 554,
+      "amount": 5000
+    }
+  ]
+}
