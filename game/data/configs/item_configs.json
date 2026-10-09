@@ -97318,6 +97318,18 @@
     "id": "11035"
   },
   {
+    "destroy_message": "This note will be destroyed if you drop it and you will need to search the chest in Sven's cave to get another.",
+    "shop_price": "1",
+    "examine": "Brittle. Yellowed. Different.",
+    "durability": null,
+    "name": "Parchment",
+    "tradeable": "false",
+    "destroy": "true",
+    "weight": "0.453",
+    "archery_ticket_price": "0",
+    "id": "11036"
+  },
+  {
     "requirements": "{0,40}",
     "ge_buy_limit": "100",
     "examine": "A salty sword.",
@@ -97345,6 +97357,66 @@
     "id": "11038"
   },
   {
+    "destroy_message": "This key will be destroyed if you drop it and you will need to kill another skeletal fremennik to get another.",
+    "shop_price": "1",
+    "examine": "A large rusty key. (Olaf's Quest)",
+    "durability": null,
+    "name": "Key",
+    "tradeable": "false",
+    "destroy": "true",
+    "weight": "0.001",
+    "archery_ticket_price": "0",
+    "id": "11039"
+  },
+  {
+    "destroy_message": "This key will be destroyed if you drop it and you will need to kill another skeletal fremennik to get another.",
+    "shop_price": "1",
+    "examine": "A large rusty key. (Olaf's Quest)",
+    "durability": null,
+    "name": "Key",
+    "tradeable": "false",
+    "destroy": "true",
+    "weight": "0.001",
+    "archery_ticket_price": "0",
+    "id": "11040"
+  },
+  {
+    "destroy_message": "This key will be destroyed if you drop it and you will need to kill another skeletal fremennik to get another.",
+    "shop_price": "1",
+    "examine": "A large rusty key. (Olaf's Quest)",
+    "durability": null,
+    "name": "Key",
+    "tradeable": "false",
+    "destroy": "true",
+    "weight": "0.001",
+    "archery_ticket_price": "0",
+    "id": "11041"
+  },
+  {
+    "destroy_message": "This key will be destroyed if you drop it and you will need to kill another skeletal fremennik to get another.",
+    "shop_price": "1",
+    "examine": "A large rusty key. (Olaf's Quest)",
+    "durability": null,
+    "name": "Key",
+    "tradeable": "false",
+    "destroy": "true",
+    "weight": "0.001",
+    "archery_ticket_price": "0",
+    "id": "11042"
+  },
+  {
+    "destroy_message": "This key will be destroyed if you drop it and you will need to kill another skeletal fremennik to get another.",
+    "shop_price": "1",
+    "examine": "A large rusty key. (Olaf's Quest)",
+    "durability": null,
+    "name": "Key",
+    "tradeable": "false",
+    "destroy": "true",
+    "weight": "0.001",
+    "archery_ticket_price": "0",
+    "id": "11043"
+  },
+  {
     "examine": "Looks like it might still float.",
     "durability": null,
     "name": "Rotten barrel",
@@ -97354,8 +97426,8 @@
     "id": "11044"
   },
   {
-    "destroy_message": "You can reclaim this item from the place you found it.",
-    "examine": "Looks like it might still float.",
+    "destroy_message": "This barrel will be destroyed if you drop it and you will need to pick up another from Sven's cave.",
+    "examine": "Looks like it might still float...",
     "durability": null,
     "name": "Rotten barrel",
     "tradeable": "false",

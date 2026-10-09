@@ -59146,15 +59146,7 @@
   {
     "examine": "What could be worse than an angry, undead fremennik?",
     "name": "Ulfric",
-    "defence_level": "35",
-    "safespot": null,
-    "strength_level": "1",
-    "attack_speed": "6",
-    "id": "3710",
-    "aggressive": "false",
-    "magic_level": "35",
-    "range_level": "35",
-    "attack_level": "35"
+    "id": "3710"
   },
   {
     "examine": "An annoying flappy thing.",
