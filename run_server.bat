@@ -8,11 +8,6 @@ set "JRE_DIR=%SCRIPT_DIR%jre"
 set "GAME_DIR=%SCRIPT_DIR%game"
 set "SERVER_JAR=%GAME_DIR%\server.jar"
 
-echo ========================================
-echo          2009scape Server
-echo ========================================
-echo.
-
 if not exist "%JRE_DIR%\bin\java.exe" (
     echo ERROR: Bundled JRE not found:
     echo %JRE_DIR%\bin\java.exe
@@ -43,15 +38,11 @@ echo Starting server...
 echo Working directory:
 echo %CD%
 echo.
-echo ========================================
-echo.
 
 "%JRE_DIR%\bin\java.exe" -jar "server.jar"
 
 echo.
-echo ========================================
 echo Server stopped.
-echo ========================================
 echo.
 
 pause
