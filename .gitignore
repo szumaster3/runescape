@@ -1,6 +1,7 @@
 game/plugins/*
 game/data/players/*
 game/data/playerstats/*
+game/data/serverstore/*
 game/data/logs/*
 game/worldprops/*
 game/data/cache.zip
