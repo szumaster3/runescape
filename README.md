@@ -1,104 +1,111 @@
-# rs2 (ready-to-play build)
+# rs2 (Ready-to-Play Build)
 
-Precompiled singleplayer build of the [rs2](https://gitlab.com/single-player/rs2) server (RuneScape build 530, January 2009, based on [2009scape](https://gitlab.com/2009scape/2009scape)) together with a client and a bundled Java runtime. Download, start the server, start the client.
+A precompiled single-player build of the [rs2](https://gitlab.com/single-player/rs2) server (RuneScape build 530, January 2009), based on [2009scape](https://gitlab.com/2009scape/2009scape), bundled with the game client and a Java runtime.
 
-This build is updated continuously and follows the latest changes in the source repository. Check the commit history of this repository for the date of the current build.
+No manual Java installation or separate server/client startup is required. Simply launch the game using `launch.bat`.
+
+This build is updated continuously and follows the latest changes in the source repository. Check this repository's commit history to see which source revision the current build is based on.
 
 > Not affiliated with Jagex or the upstream 2009scape team.
 
 ## Requirements
 
-- No Java installation needed: a JRE is bundled in `jre/`.
-- Free RAM for the server; with `preload_map = true` it needs about 2 GB more.
-- No database.
+- **Windows:** The included `launch.bat` is designed for Windows.
+- **Java:** A bundled Java runtime is provided in `jre/`.
+- **Memory:** The launcher allocates 2 GB of RAM to the server and 1 GB to the client. Additional memory may be needed depending on your configuration.
+- **Database:** No database is required for the default single-player setup.
 
-## Quick start
+## Quick Start
 
-1. Start the server:
-    - Windows: `run_server.bat`
-    - Linux: `./run_server.sh`
-2. Wait until the server finishes loading.
-3. Start the client:
-    - Windows: `run_client.bat`
-    - Linux: `./run_client.sh`
-4. Log in with any username and password. The account is created on first login.
+1. Extract the complete archive to a folder of your choice.
+2. Run `launch.bat`.
+3. Wait for the server to start. The launcher automatically detects when port `43595` becomes available and then starts the client.
+4. Log in using any username and password. Your account is created on first login.
 
-Keep the server window open while playing. Closing it stops the game; progress is saved to `game/data/players/`.
+Keep the launcher running while playing. Closing the launcher terminates the Java processes started by it.
 
-## Linux
+Your player data is stored in `game/data/players/` and persists between sessions.
 
-The `.sh` scripts expect a Java runtime at `jre/bin/java`. If the bundled `jre/` is built for Windows, replace it with a Java 11 runtime for your platform, keeping the same path. Make the scripts executable if needed:
+**Important:** Do not run multiple instances of the launcher simultaneously. If port `43595` is already in use, the launcher will refuse to start another server instance.
 
-```bash
-chmod +x run_server.sh run_client.sh
-```
+## Directory Layout
 
-## Directory layout
-
-```
+```text
 .
-├── game/
-│   ├── server.jar
-│   ├── client.jar
-│   ├── worldprops/default.conf   # server configuration
-│   └── data/
-│       ├── cache/                # game cache
-│       ├── configs/              # JSON configs (shops, NPCs, items, drop tables)
-│       ├── players/              # player saves
-│       ├── eco/                  # Grand Exchange state
-│       ├── botdata/              # bot data (Deprecated)
-│       ├── playerstats/          # kill counts, rare drops
-│       ├── serverstore/
-│       └── logs/
-├── jre/                          # bundled Java runtime
-├── run_server.bat / run_server.sh
-└── run_client.bat / run_client.sh
+├── launch.bat                   # Starts the server and client
+├── jre/                         # Bundled Java runtime
+└── game/
+    ├── server.jar               # Game server
+    ├── client.jar               # Game client
+    ├── worldprops/
+    │   └── default.conf         # Server configuration
+    └── data/
+        ├── cache/               # Game cache
+        ├── configs/             # JSON configuration files
+        ├── players/             # Player saves
+        ├── eco/                 # Grand Exchange state
+        ├── botdata/             # Bot data (deprecated)
+        ├── playerstats/         # Kill counts and rare drops
+        ├── serverstore/         # Server storage
+        └── logs/                # Server logs
 ```
 
-Both scripts change into `game/` before launching, so `worldprops/` and `data/` are always resolved relative to it.
+The launcher changes the working directory to `game/` before starting the server and client. This ensures that relative paths such as `worldprops/` and `data/` resolve correctly.
 
 ## Configuration
 
-Edit `game/worldprops/default.conf` while the server is stopped, then restart. Commonly changed keys:
+Stop the game before editing `game/worldprops/default.conf`. Restart the launcher for configuration changes to take effect.
 
-| Key                        | Default                 | Effect                                                                                                 |
-|----------------------------|-------------------------|--------------------------------------------------------------------------------------------------------|
-| `use_auth`                 | `false`                 | Passwords are not checked against a DB.                                                                |
-| `persist_accounts`         | `false`                 | Account data (credits, playtime) is not written to a DB. Save data (stats, inventory) is still stored. |
-| `noauth_default_admin`     | `true`                  | Every player gets admin privileges (only when `use_auth = false` and `dev = true`).                    |
-| `secret_key`               | `2009scape_development` | Must match the client; do not change unless you also change the client.                                |
-| `preload_map`              | `false`                 | `true` loads the map into memory at startup.                                                           |
-| `default_xp_rate`          | `1.0`                   | XP multiplier.                                                                                         |
-| `autostock_ge`             | `false`                 | Automatically stocks the Grand Exchange (configured in `data/eco/ge_autostock.json`).                  |
-| `i_want_to_cheat`          | `false`                 | Enables GE auto-buy/auto-sell.                                                                         |
-| `log_level` / `write_logs` | `verbose` / `true`      | Log verbosity and file logging.                                                                        |
-| `data_path`                | `data`                  | Base dir for cache, saves, configs.                                                                    |
+Commonly changed settings:
 
-Every key is documented inline in the file. See the [source README](https://gitlab.com/single-player/rs2) for the full table.
+| Key | Default | Effect |
+|---|---|---|
+| `use_auth` | `false` | Disables database-backed password authentication. |
+| `persist_accounts` | `false` | Disables database persistence for account metadata such as credits and playtime. Player saves remain stored locally. |
+| `noauth_default_admin` | `true` | Grants admin privileges when the relevant `use_auth` and `dev` conditions are met. |
+| `secret_key` | `2009scape_development` | Must match the client configuration. Do not change it without updating the client accordingly. |
+| `preload_map` | `false` | Loads the map into memory during startup when enabled; requires additional RAM. |
+| `default_xp_rate` | `1.0` | Sets the default XP multiplier. |
+| `autostock_ge` | `false` | Automatically stocks the Grand Exchange using `data/eco/ge_autostock.json`. |
+| `i_want_to_cheat` | `false` | Enables Grand Exchange auto-buy and auto-sell features. |
+| `log_level` / `write_logs` | `verbose` / `true` | Controls logging verbosity and file logging. |
+| `data_path` | `data` | Sets the base directory for game data, including caches, saves and configurations. |
 
-## Saves and backups
+All configuration options are documented in `game/worldprops/default.conf`. For the complete configuration reference, see the [source repository](https://gitlab.com/single-player/rs2).
 
-Back up these two folders before updating or editing the config:
+## Saves and Backups
 
-- `game/data/players/`: player saves
-- `game/data/eco/`: Grand Exchange state
+Back up the following directories before updating the game or changing its configuration:
+
+- `game/data/players/` — player accounts and saved progress.
+- `game/data/eco/` — Grand Exchange state.
+
+Keep these directories when replacing the game files with a newer build if you want to preserve your progress.
 
 ## Updating
 
-1. Close the client and stop the server.
-2. Back up `game/data/players/` and `game/data/eco/`.
-3. Replace the files from the new release, but keep your own `game/data/players/` and `game/data/eco/`.
-4. Compare your `game/worldprops/default.conf` with the new one, since keys can be added or renamed between releases.
+1. Close the client and exit the launcher.
+2. Make backups of `game/data/players/` and `game/data/eco/`.
+3. Replace the old game files with the new release files.
+4. Restore your backed-up player and eco data if necessary.
+5. Compare your existing `game/worldprops/default.conf` with the new version, as configuration options may be added, removed or renamed.
+
+Avoid overwriting your existing save data when updating.
 
 ## Troubleshooting
 
-| Message                             | Cause                                                                                       |
-|-------------------------------------|---------------------------------------------------------------------------------------------|
-| `Bundled JRE not found`             | `jre/bin/java` is missing or not executable. Re-extract the archive or see [Linux](#linux). |
-| `server.jar not found`              | `game/server.jar` is missing. Re-extract the archive.                                       |
-| `worldprops/default.conf not found` | `game/worldprops/default.conf` is missing. Restore it from the release.                     |
-| Client stuck on loading             | The server is not running or has not finished starting.                                     |
+| Problem | Possible cause and solution |
+|---|---|
+| `Bundled JRE not found` | The Java runtime is missing from `jre/`. Re-extract the complete archive. |
+| `server.jar not found` | `game/server.jar` is missing. Restore it from the release archive. |
+| `client.jar not found` | `game/client.jar` is missing. Restore it from the release archive. |
+| `worldprops/default.conf not found` | The server configuration is missing. Restore it from the release archive. |
+| Port `43595` is already in use | Another server instance or another application is using the port. Close the existing instance before launching the game. |
+| Client does not start | The server may still be starting, or it may have failed to launch. Check the server output and logs. |
+| The console repeatedly prints `Still waiting for the server to start...` | The launcher has not detected the server listening on port `43595`. One known cause is extracting the game to a path containing spaces, such as `C:\\Users\\My Name\\Documents\\game`. Move the game folder to a path without spaces. |
 
 ## License
 
-[AGPL-3.0](https://gitlab.com/single-player/rs2/-/blob/master/LICENSE), inherited from upstream. Game cache and assets belong to Jagex and are not licensed by this project. The bundled Java runtime is covered by its own license files in `jre/legal/`.
+The server source code is licensed under [AGPL-3.0](https://gitlab.com/single-player/rs2/-/blob/master/LICENSE), inherited from upstream.
+
+The game cache and assets belong to Jagex and are not licensed by this project. The bundled Java runtime is subject to its own license terms, available in `jre/legal/` where provided.
